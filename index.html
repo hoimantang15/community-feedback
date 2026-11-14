@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Event Feedback</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.5;
+            background: #f5f7fa;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,.08);
+        }
+        h1 { text-align: center; }
+        label {
+            display: block;
+            margin-top: 18px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 7px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        textarea { height: 120px; }
+        button {
+            margin-top: 24px;
+            padding: 12px 24px;
+            border: 0;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h1>Community Event Feedback</h1>
+    <p>Thank you for attending our event. Please tell us about your experience.</p>
+
+    <form id="feedbackForm">
+        <label>Your name</label>
+        <input type="text" name="name" required>
+
+        <label>Which event did you attend?</label>
+        <select name="event" required>
+            <option value="">Select an event</option>
+            <option>Summer Fair</option>
+            <option>Sports Day</option>
+            <option>Community Workshop</option>
+        </select>
+
+        <label>How would you rate the event?</label>
+        <select name="rating" required>
+            <option value="">Select a rating</option>
+            <option value="1">1 - Poor</option>
+            <option value="2">2 - Fair</option>
+            <option value="3">3 - Good</option>
+            <option value="4">4 - Very Good</option>
+            <option value="5">5 - Excellent</option>
+        </select>
+
+        <label>Your feedback</label>
+        <textarea name="comment" required></textarea>
+
+        <button type="submit">Submit Feedback</button>
+    </form>
+    <p id="message"></p>
+</div>
+
+<script>
+document.getElementById("feedbackForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    document.getElementById("message").textContent =
+        "Thank you! Your feedback form was completed.";
+    this.reset();
+});
+</script>
+</body>
+</html>
